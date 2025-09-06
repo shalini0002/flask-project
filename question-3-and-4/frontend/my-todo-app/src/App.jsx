@@ -5,6 +5,9 @@ import { useState } from "react";
 export default function Todo() {
   const [itemName, setItemName] = useState("");
   const [itemDescription, setItemDescription] = useState("");
+  const [itemId, setItemId] = useState("");
+  const [itemUuid, setItemUuid] = useState("");
+  const [itemHash, setItemHash] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,6 +25,30 @@ export default function Todo() {
       <h2>To-Do Page</h2>
       <form onSubmit={handleSubmit}>
         <div>
+        <label>Item ID: </label>
+  <input
+    type="text"
+    value={itemId}
+    onChange={(e) => setItemId(e.target.value)}
+    required
+  />
+
+<label>Item UUID: </label>
+  <input
+    type="text"
+    value={itemUuid}
+    onChange={(e) => setItemUuid(e.target.value)}
+    required
+  />
+
+<label>Item Hash: </label>
+  <input
+    type="text"
+    value={itemHash}
+    onChange={(e) => setItemHash(e.target.value)}
+    required
+  />
+  
           <label>Item Name: </label>
           <input
             type="text"
